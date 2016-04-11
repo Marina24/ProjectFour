@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Images</string>
+    <string name="app_name_second">Gallery</string>
+    <string name="header_text">Images</string>
+    <string name="image_gallery_text">Image gallery</string>
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
+    <string name="back">back</string>
+</resources>
