@@ -19,7 +19,10 @@
 
         <activity android:name=".ViewPagerActivity"
             android:label="@string/app_name_second"
-            android:theme="@style/AppThemeView">
+            android:theme="@style/AppThemeView"
+            android:parentActivityName=".DrawerActivity">
+            <meta-data android:name="android.support.PARENT_ACTIVITY"
+                android:value=".DrawerActivity"/>
 
         </activity>
     </application>
