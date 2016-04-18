@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class ViewPagerActivity extends AppCompatActivity {
@@ -61,11 +62,38 @@ public class ViewPagerActivity extends AppCompatActivity {
 
             @Override
             public void onPageScrollStateChanged(int state) {
-
             }
         });
-        mViewPager .setAdapter(mImageFragmentPagerAdapter);
+        mViewPager.setAdapter(mImageFragmentPagerAdapter);
+
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                switch (checkedId) {
+                    case R.id.radioButton:
+                        mViewPager.setCurrentItem(0);
+                        break;
+                    case R.id.radioButton2:
+                        mViewPager.setCurrentItem(1);
+                        break;
+                    case R.id.radioButton3:
+                        mViewPager.setCurrentItem(2);
+                        break;
+                    case R.id.radioButton4:
+                        mViewPager.setCurrentItem(3);
+                        break;
+                    case R.id.radioButton5:
+                        mViewPager.setCurrentItem(4);
+                        break;
+                    case R.id.radioButton6:
+                        mViewPager.setCurrentItem(5);
+                        break;
+                }
+            }
+        });
     }
+
+
 
     public static class ImageFragmentPagerAdapter extends FragmentPagerAdapter {
         public ImageFragmentPagerAdapter(FragmentManager fm) {
