@@ -36,6 +36,7 @@ public class ViewPagerActivity extends AppCompatActivity {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
             }
+
             @Override
             public void onPageSelected(int position) {
                 switch (position) {
@@ -92,7 +93,6 @@ public class ViewPagerActivity extends AppCompatActivity {
             }
         });
     }
-
 
 
     public static class ImageFragmentPagerAdapter extends FragmentPagerAdapter {

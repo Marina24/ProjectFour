@@ -38,15 +38,15 @@ public class DrawerActivity extends AppCompatActivity {
                 @Override
                 public boolean onNavigationItemSelected(MenuItem item) {
 
-                    if(item.isChecked()) item.setChecked(false);
+                    if (item.isChecked()) item.setChecked(false);
                     else item.setChecked(true);
 
                     mDrawerLayout.closeDrawers();
 
                     int id = item.getItemId();
-                    switch (id){
+                    switch (id) {
                         case R.id.navigation_drawer_item1:
-                            Toast.makeText(getApplicationContext(),"Image Gallery",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), "Image Gallery", Toast.LENGTH_SHORT).show();
                             startActivity(mIntent);
                             break;
                     }
@@ -58,10 +58,10 @@ public class DrawerActivity extends AppCompatActivity {
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(mToolbar);
 
-        mDrawerLayout = (DrawerLayout)findViewById(R.id.drawer_design_support_layout);
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_design_support_layout);
 
-        mActionBarDrawerToggle = new ActionBarDrawerToggle(this,mDrawerLayout,
-                mToolbar,R.string.drawer_open,R.string.drawer_close);
+        mActionBarDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout,
+                mToolbar, R.string.drawer_open, R.string.drawer_close);
 
         mDrawerLayout.addDrawerListener(mActionBarDrawerToggle);
     }
