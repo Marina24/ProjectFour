@@ -19,6 +19,7 @@ public class ViewPagerActivity extends AppCompatActivity {
 
     private ImageFragmentPagerAdapter mImageFragmentPagerAdapter;
     private ViewPager mViewPager;
+    private RadioGroup mRadioGroup;
     static final int NUM_ITEMS = 6;
     public static final String[] IMAGE_NAME = {"borabora", "dubai", "switzerland", "kenya", "london", "iceland",};
     public static final String[] IMAGE_COUNT = {"Image one", "Image two", "Image three", "Image four", "Image five", "Image six",};
@@ -31,7 +32,16 @@ public class ViewPagerActivity extends AppCompatActivity {
         mViewPager = (ViewPager) findViewById(R.id.viewPager);
 
 
-        final RadioGroup radioGroup = (RadioGroup) findViewById(R.id.radiogroup);
+        mRadioGroup = (RadioGroup) findViewById(R.id.radiogroup);
+
+        mViewPager.setAdapter(mImageFragmentPagerAdapter);
+
+        scrollingPagesTowards();
+        scrollingPagesRadioButton();
+    }
+
+    // Changes images scrolling screen
+    private void scrollingPagesTowards() {
         mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -41,22 +51,22 @@ public class ViewPagerActivity extends AppCompatActivity {
             public void onPageSelected(int position) {
                 switch (position) {
                     case 0:
-                        radioGroup.check(R.id.radioButton);
+                        mRadioGroup.check(R.id.radioButton);
                         break;
                     case 1:
-                        radioGroup.check(R.id.radioButton2);
+                        mRadioGroup.check(R.id.radioButton2);
                         break;
                     case 2:
-                        radioGroup.check(R.id.radioButton3);
+                        mRadioGroup.check(R.id.radioButton3);
                         break;
                     case 3:
-                        radioGroup.check(R.id.radioButton4);
+                        mRadioGroup.check(R.id.radioButton4);
                         break;
                     case 4:
-                        radioGroup.check(R.id.radioButton5);
+                        mRadioGroup.check(R.id.radioButton5);
                         break;
                     case 5:
-                        radioGroup.check(R.id.radioButton6);
+                        mRadioGroup.check(R.id.radioButton6);
                         break;
                 }
             }
@@ -65,9 +75,11 @@ public class ViewPagerActivity extends AppCompatActivity {
             public void onPageScrollStateChanged(int state) {
             }
         });
-        mViewPager.setAdapter(mImageFragmentPagerAdapter);
+    }
 
-        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+    // Changes images pressed RadioButton
+    private void scrollingPagesRadioButton() {
+        mRadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 switch (checkedId) {
